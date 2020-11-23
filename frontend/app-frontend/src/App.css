@@ -12,22 +12,25 @@ body {
   top:0;
   left:0;
 }
-.menu-item{
-  padding-top:3vh;
-  padding-bottom:3vh;
-  text-align: center;
-}
-.menu-item:hover{
-  background-color:  #282c34;
-  transition: 500ms;
-}
-.menu-item img{
-  width : 40%;
-}
+
 p{
   text-align: center;
   margin-left: 8vh;
   color: #A9A9A9;
+}
+.button{
+  background-color:#A9A9A9;
+  border:none;
+  padding-top:3vh;
+  padding-bottom:3vh;
+  text-align: center;
+}
+.button img{
+  width:40%;
+}
+.button:hover{
+  background-color:  #282c34;
+  transition: 500ms;
 }
 #container {
   -webkit-box-sizing: border-box;

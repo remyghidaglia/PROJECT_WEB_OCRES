@@ -15,35 +15,39 @@ import {
   Legend,
   ResponsiveContainer
 } from "recharts";
+import { useState } from 'react';
 
 const data = [
   { name: "Page A", uv: 4000, pv: 2400, amt: 2400 },
   { name: "Page B", uv: 3000, pv: 1398, amt: 2210 },
   { name: "Page C", uv: 2000, pv: 9800, amt: 2290 },
   { name: "Page D", uv: 2780, pv: 3908, amt: 2000 },
-  { name: "Page E", uv: 1890, pv: 4800, amt: 2181 },
-  { name: "Page F", uv: 2390, pv: 3800, amt: 2500 },
-  { name: "Page G", uv: 3490, pv: 4300, amt: 2100 }
 ];
+const pages= [
+  {img :img1},
+  {img :img2},
+  {img :img3},
+  {img :img4},
+  {img :img5},
+  {img :img6},
+]
 
 function App() {
+
+  const buttons = pages.map(p => <Button content={p.img} ></Button>)
+
   return (
     <div className="App">
       <div id="menu-bar">
-        <div class="menu-item"><img src={img1} alt="info"></img></div>
-        <div class="menu-item"><img src={img2} alt="piechart"></img> </div>
-        <div class="menu-item"><img src={img3} alt="world"></img></div>
-        <div class="menu-item"><img src={img4} alt="euro"></img></div>
-        <div class="menu-item"><img src={img5} alt="barchart"></img></div>
-        <div class="menu-item"><img src={img6} alt="cast"></img></div>
+      { buttons }
       </div>
-      <div id="container">{renderPieChart}</div>
+      <div id="container">{renderChart}</div>
       <p>Répartition du cul</p>
       
     </div>
   );
 }
-const renderPieChart = (
+const renderChart = (
   <ResponsiveContainer>
       <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
         <CartesianGrid strokeDasharray="3 3" />
@@ -56,4 +60,17 @@ const renderPieChart = (
       </BarChart>
     </ResponsiveContainer>
 );
+const Button = ({content, callback}) => {
+  var renderedText = content
+  var handleClick
+  return (
+    <button 
+      className="button" 
+      onClick={handleClick}
+    ><img src={renderedText}></img>
+    </button>
+    )
+}
+
+
 export default App;
