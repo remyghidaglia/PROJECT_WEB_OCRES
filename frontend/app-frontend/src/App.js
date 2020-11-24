@@ -25,7 +25,7 @@ import { useState } from 'react';
 // ];
 
 const pages= [
-  {id : 0,img :img1, content:"hello"},
+  {id : 0,img :img1, content:"Hey"},
   {id : 1,img :img2, content:"eh "},
   {id : 2,img :img3, content:"blablabla"},
   {id : 3,img :img4, content:"manger"},
