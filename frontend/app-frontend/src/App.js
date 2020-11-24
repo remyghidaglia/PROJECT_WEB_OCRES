@@ -24,29 +24,40 @@ const data = [
   { name: "Page D", uv: 2780, pv: 3908, amt: 2000 },
 ];
 const pages= [
-  {img :img1},
-  {img :img2},
-  {img :img3},
-  {img :img4},
-  {img :img5},
-  {img :img6},
+  {id : 0,img :img1, content:"eh ohhhhhh"},
+  {id : 1,img :img2, content:"eh "},
+  {id : 2,img :img3, content:"blablabla"},
+  {id : 3,img :img4, content:"manger"},
+  {id : 4,img :img5, content:"boire"},
+  {id : 5,img :img6, content:"dormir"},
 ]
 
-function App() {
+// const socials = {
+//  linkedin : {piechart :{}},
+//  facebook
+// }
 
-  const buttons = pages.map(p => <Button content={p.img} ></Button>)
+
+function App() {
+  const [currentPage, setCurrentPage] = useState(pages[0])
+
+  const handlePageClick = id => {
+    const pageClicked = pages.find(p => p.id == id)
+    console.log(pageClicked,currentPage)
+    setCurrentPage(pageClicked)
+  }
+  const buttons = pages.map(p => <Button key={p.id} content={p.img} id={p.id} callback={handlePageClick}></Button>)
 
   return (
     <div className="App">
       <div id="menu-bar">
       { buttons }
       </div>
-      <div id="container">{renderChart}</div>
-      <p>Répartition du cul</p>
-      
+      <div id="container">{currentPage.content}</div>
     </div>
   );
 }
+
 const renderChart = (
   <ResponsiveContainer>
       <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
@@ -60,9 +71,11 @@ const renderChart = (
       </BarChart>
     </ResponsiveContainer>
 );
-const Button = ({content, callback}) => {
+
+
+const Button = ({content, callback, id}) => {
   var renderedText = content
-  var handleClick
+  var handleClick = () => callback(id)
   return (
     <button 
       className="button" 
@@ -71,6 +84,7 @@ const Button = ({content, callback}) => {
     </button>
     )
 }
+
 
 
 export default App;
