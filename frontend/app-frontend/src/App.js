@@ -24,7 +24,7 @@ const data = [
   { name: "Page D", uv: 2780, pv: 3908, amt: 2000 },
 ];
 const pages= [
-  {id : 0,img :img1, content:"eh ohhhhhh"},
+  {id : 0,img :img1, content:"hello"},
   {id : 1,img :img2, content:"eh "},
   {id : 2,img :img3, content:"blablabla"},
   {id : 3,img :img4, content:"manger"},
