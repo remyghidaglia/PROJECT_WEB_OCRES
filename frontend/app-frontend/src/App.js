@@ -1,10 +1,13 @@
 import img1 from './img/info.png';
 import img2 from './img/piechart.png';
 import img3 from './img/world.png';
-import img4 from './img/euro.png';
+import img4 from './img/money.png';
 import img5 from './img/barchart.png';
 import img6 from './img/cast.png';
+import Formulaire from './Admin';
 import './App.css';
+
+
 // import {
 //   BarChart,
 //   Bar,
@@ -25,7 +28,7 @@ import { useState } from 'react';
 // ];
 
 const pages= [
-  {id : 0,img :img1, content:"Hey"},
+  {id : 0,img :img1, content: <Formulaire/>},
   {id : 1,img :img2, content:"eh "},
   {id : 2,img :img3, content:"blablabla"},
   {id : 3,img :img4, content:"manger"},
@@ -33,17 +36,17 @@ const pages= [
   {id : 5,img :img6, content:"dormir"},
 ]
 
-const socials = {
+/*const socials = {
  linkedin : {piechart :{}},
  facebook
-}
+}*/
 
 
 function App() {
   const [currentPage, setCurrentPage] = useState(pages[0])
 
   const handlePageClick = id => {
-    const pageClicked = pages.find(p => p.id == id)
+    const pageClicked = pages.find(p => p.id === id)
     console.log(pageClicked,currentPage)
     setCurrentPage(pageClicked)
   }
