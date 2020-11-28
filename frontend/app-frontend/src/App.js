@@ -1,3 +1,4 @@
+import React from "react";
 import img1 from './img/info.png';
 import img2 from './img/piechart.png';
 import img3 from './img/world.png';
@@ -9,55 +10,91 @@ import BarChart from './chart_100g.js';
 import Ecologie from './Ecologie';
 import Allergens from './Allergens';
 import './App.css';
-
-
 import { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
+// Each logical "route" has two components, one for
+// the sidebar and one for the main area. We want to
+// render both of them in different places when the
+// path matches the current URL.
 
-const pages= [
-  {id : 0,img :img1, title: "Bienvenue sur votre Dashboard culinaire",content: <Formulaire/>},
-  {id : 1,img :img2, title: "Voici la proportion des composants de votre produit (/100g)",content:<BarChart/>},
-  {id : 2,img :img3, title: 'x',content: <Ecologie/>},
-  {id : 3,img :img4, title: 'x',content:"manger"},
-  {id : 4,img :img5, title: 'x',content:"boire"},
-  {id : 5,img :img6, title: 'x',content: <Allergens/>},
-]
-
-
-
-function App() {
-  const [currentPage, setCurrentPage] = useState(pages[0])
-
-  const handlePageClick = id => {
-    const pageClicked = pages.find(p => p.id === id)
-    console.log(pageClicked,currentPage)
-    setCurrentPage(pageClicked)
+// We are going to use this route config in 2
+// spots: once for the sidebar and once in the main
+// content section. All routes are in the same
+// order they would appear in a <Switch>.
+const routes = [
+  {
+    path: "/",
+    exact: true,
+    title: () =><p>Bienvenue sur votre Dashboard culinaire</p>,
+    main: () => <Formulaire/>
+  },
+  {
+    path: "/BarChart",
+    title: () =><p>Voici la proportion des composants de votre produit (/100g)</p>,
+    main: () => <BarChart/>
+  },
+  {
+    path: "/Ecologie",
+    title: () =><p>'x'</p>,
+    main: () => <Ecologie/>
+  },
+  {
+    path:"/Manger",
+    title: () =><p>'x'</p>,
+    main: () => <p>manger</p>
+  },
+  {
+    path:"/Boire",
+    title: () =><p>'x'</p>,
+    main: () => <p>Boire</p>
+  },
+  {
+    path:"/Allergens",
+    title: () =><p>'x'</p>,
+    main: () => <Allergens/>
   }
-  const buttons = pages.map(p => <Button key={p.id} content={p.img} id={p.id} callback={handlePageClick}></Button>)
+];
 
+export default function SidebarExample() {
   return (
-    <div className="App">
+    <Router>
       <div id="menu-bar">
-      { buttons }
-      </div>
-      <p>{currentPage.title}</p>
-      <div id="container">{currentPage.content}</div>
-    </div>
+              <div className="button"><Link to="/"><img src={img1}></img></Link></div>
+              <div className="button"><Link to="/BarChart"><img src={img2}></img></Link></div>
+              <div className="button"><Link to="/Ecologie"><img src={img3}></img></Link></div>
+              <div className="button"><Link to="/Manger"><img src={img4}></img></Link></div>
+              <div className="button"><Link to="/Boire"><img src={img5}></img></Link></div>
+              <div className="button"><Link to="/Allergens"><img src={img6}></img></Link></div>
+        </div>
+
+        <div id="container">
+          <Switch>
+            {routes.map((route, index) => (
+              <Route
+              key={index}
+              path={route.path}
+              exact={route.exact}
+              children={<route.title/>}
+            />
+            ))}
+          </Switch>
+          <Switch>
+            {routes.map((route, index) => (
+              <Route
+              key={index}
+              path={route.path}
+              exact={route.exact}
+              children={<route.main/>}
+            />
+            ))}
+          </Switch>
+        </div>
+    </Router>
   );
 }
-
-const Button = ({content, callback, id}) => {
-  var renderedText = content
-  var handleClick = () => callback(id)
-  return (
-    <button 
-      className="button" 
-      onClick={handleClick}
-    ><img src={renderedText}></img>
-    </button>
-    )
-}
-
-
-
-export default App;
