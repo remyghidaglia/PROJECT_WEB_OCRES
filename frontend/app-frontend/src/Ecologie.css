@@ -1,0 +1,55 @@
+h3[id=ecolo] {
+    color: #6e6a85;
+}
+
+h4 {
+    color: #A9A9A9;
+}
+
+@media screen and (min-width: 1025px) {
+    svg[id=curseur] {
+        width: 19em;
+    }
+    h3 {
+        font-size: 4em;
+      }
+    h4 {
+        font-size: 2em;
+       }
+}
+
+@media screen and (max-width: 1024px) {
+    svg[id=curseur] {
+        width: 16em;
+    }
+    h3 {
+        font-size: 3em;
+      }
+    h4 {
+        font-size: 1.5em;
+       }
+}
+
+@media screen and (max-width: 992px) {
+    svg[id=curseur] {
+        width: 13em;
+    }
+    h3 {
+        font-size: 2em;
+      }
+    h4 {
+        font-size: 1em;
+       }
+}
+
+@media screen and (max-width: 768px) {
+    svg[id=curseur] {
+        width: 10em;
+    }
+    h3 {
+        font-size: 1em;
+      }
+    h4 {
+        font-size: 0.75em;
+       }
+ }
