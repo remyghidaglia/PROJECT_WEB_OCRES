@@ -60,7 +60,6 @@ input[id=codeB] {
 input[id=codeB]:hover {
     background-color: white;
     color: rgb(43,46,55);
-    border: 1px solid rgba(169,169,169, 0.4);
 }
 
 

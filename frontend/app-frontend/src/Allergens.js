@@ -33,15 +33,9 @@ const state = {
 export default class App extends React.Component {
     render() {
         return (
-            <div>
-                {/* <div class="row">
-                    <div class="col-12">
-                        <h3 id="ecolo">Page allergènes</h3>
-                    </div>
-                </div> */}
-                <div class="row">
-                    <div class="col-12">
+            <div className="boxshadow">
                         <Doughnut
+                            margin={{ top: 3000, right: 30, left: 20, bottom: 30 }}
                             data={state}
                             options={{
                                 legend: {
@@ -50,9 +44,6 @@ export default class App extends React.Component {
                                 }
                             }}
                         />
-                    </div>
-                </div>
-
             </div>
         );
     }

@@ -9,6 +9,7 @@ import Formulaire from './Admin';
 import BarChart from './chart_100g.js';
 import Ecologie from './Ecologie';
 import Allergens from './Allergens';
+import Tags from './Tags';
 import './App.css';
 import { useState } from 'react';
 import {
@@ -45,9 +46,9 @@ const routes = [
     main: () => <Ecologie/>
   },
   {
-    path:"/Manger",
-    title: () =><p>'x'</p>,
-    main: () => <p>manger</p>
+    path:"/Tags",
+    title: () =><p>Voici les différents tags en rapport avec votre produit</p>,
+    main: () => <Tags/>
   },
   {
     path:"/Boire",
@@ -65,12 +66,12 @@ export default function SidebarExample() {
   return (
     <Router>
       <div id="menu-bar">
-              <div className="button"><Link to="/"><img src={img1}></img></Link></div>
-              <div className="button"><Link to="/BarChart"><img src={img2}></img></Link></div>
-              <div className="button"><Link to="/Ecologie"><img src={img3}></img></Link></div>
-              <div className="button"><Link to="/Manger"><img src={img4}></img></Link></div>
-              <div className="button"><Link to="/Boire"><img src={img5}></img></Link></div>
-              <div className="button"><Link to="/Allergens"><img src={img6}></img></Link></div>
+              <div className="button"><Link to="/"><img src={img1} alt="img1"></img></Link></div>
+              <div className="button"><Link to="/BarChart"><img src={img2} alt="img2"></img></Link></div>
+              <div className="button"><Link to="/Ecologie"><img src={img3}alt="img3"></img></Link></div>
+              <div className="button"><Link to="/Tags"><img src={img4}alt="img4"></img></Link></div>
+              <div className="button"><Link to="/Boire"><img src={img5}alt="img5"></img></Link></div>
+              <div className="button"><Link to="/Allergens"><img src={img6}alt="img6"></img></Link></div>
         </div>
 
         <div id="container">
