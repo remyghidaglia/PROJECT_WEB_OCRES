@@ -56,7 +56,7 @@ const routes = [
   },
   {
     path:"/Allergens",
-    title: () =><p>'x'</p>,
+    title: () =><p>'Voici un graphique présentant les potentiels allergènes présents dans votre produit.'</p>,
     main: () => <Allergens/>
   }
 ];

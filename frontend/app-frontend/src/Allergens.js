@@ -34,16 +34,11 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-                <div class="row">
+                {/* <div class="row">
                     <div class="col-12">
                         <h3 id="ecolo">Page allergènes</h3>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12" style={{height: "130px"}}>
-                        <h3></h3>
-                    </div>
-                </div>
+                </div> */}
                 <div class="row">
                     <div class="col-12">
                         <Doughnut
