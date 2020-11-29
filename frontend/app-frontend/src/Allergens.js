@@ -35,7 +35,6 @@ export default class App extends React.Component {
         return (
             <div className="boxshadow">
                         <Doughnut
-                            margin={{ top: 3000, right: 30, left: 20, bottom: 30 }}
                             data={state}
                             options={{
                                 legend: {

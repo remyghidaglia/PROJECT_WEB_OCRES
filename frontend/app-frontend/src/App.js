@@ -5,11 +5,14 @@ import img3 from './img/world.png';
 import img4 from './img/money.png';
 import img5 from './img/barchart.png';
 import img6 from './img/cast.png';
+import img7 from './img/sales.png';
 import Formulaire from './Admin';
 import BarChart from './chart_100g.js';
 import Ecologie from './Ecologie';
 import Allergens from './Allergens';
+import Score from './Score.js';
 import Tags from './Tags';
+import Ventes from './Ventes';
 import './App.css';
 import { useState } from 'react';
 import {
@@ -32,17 +35,20 @@ const routes = [
   {
     path: "/",
     exact: true,
-    title: () =><p>Bienvenue sur votre Dashboard culinaire</p>,
+    title: () =><p>Bienvenue sur votre Dashboard</p>,
     main: () => <Formulaire/>
   },
   {
     path: "/BarChart",
     title: () =><p>Voici la proportion des composants de votre produit (/100g)</p>,
-    main: () => <BarChart/>
+    main: () => (
+    <BarChart/>
+    )
+
   },
   {
     path: "/Ecologie",
-    title: () =><p>'Vous trouverez ici les indications sur l'impact écologique de votre produit.'</p>,
+    title: () =><p>Vous trouverez ici les indications sur l'impact écologique de votre produit.</p>,
     main: () => <Ecologie/>
   },
   {
@@ -52,13 +58,18 @@ const routes = [
   },
   {
     path:"/Boire",
-    title: () =><p>'x'</p>,
-    main: () => <p>Boire</p>
+    title: () =><p>Voici le score nutritif de votre aliment</p>,
+    main: () => <Score/>
   },
   {
     path:"/Allergens",
-    title: () =><p>'Voici un graphique présentant les potentiels allergènes présents dans votre produit.'</p>,
+    title: () =><p>Voici un graphique présentant les potentiels allergènes présents dans votre produit.</p>,
     main: () => <Allergens/>
+  },
+  {
+    path:"/Ventes",
+    title: () =><p>Voici vos ventes au cours de l'année pour le nutella</p>,
+    main: () => <Ventes/>
   }
 ];
 
@@ -72,6 +83,7 @@ export default function SidebarExample() {
               <div className="button"><Link to="/Tags"><img src={img4}alt="img4"></img></Link></div>
               <div className="button"><Link to="/Boire"><img src={img5}alt="img5"></img></Link></div>
               <div className="button"><Link to="/Allergens"><img src={img6}alt="img6"></img></Link></div>
+              <div className="button"><Link to="/Ventes"><img src={img7}alt="img6"></img></Link></div>
         </div>
 
         <div id="container">
