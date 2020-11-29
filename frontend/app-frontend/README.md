@@ -20,6 +20,12 @@ Pour cela mettez vous dans le dossier app-frontend.
 Ensuite le projet est prêt à être lancé.
     - npm start
 
+## Difficultés
+
+Le projet s'est bien passé, il y a eu une bonne entente et de l'entraide entre nous deux.
+Nous n'avons pas eu de quelconques difficultés mis à part la partie storybook qui nous était inconnu auparavant et qui s'est fait à la toute fin du projet.
+Nous avons aussi remarqué un petit problème de responsive sur la page principale que nous n'avons pas encore réussi à résoudre. 
+
 ## Notre outil de projet
     
 https://trello.com/b/40hqxtRL/planning
