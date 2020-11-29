@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+# My Healthy Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Réalisé par:
+Rémy GHIDAGLIA et Marine MICHENAUD
+Gr02A OCRES, ECE Paris
+2020
 
-## Available Scripts
+***
 
-In the project directory, you can run:
+Le projet a pour but de configurer un tableau de bord (dashboard) sur notre alimentation et notre consommation. Il sert d'outil autant pour un utilisateur lambda qu'une entreprise.
+Ce tableau de bord contient différents widgets permettant de visualiser les composants et les nutriments d'un produit, l'impact écologique de celui-ci, s'il est sain ou non, les potentiels allergènes et de suivre les statistiques et les ventes d'un produit.
 
-### `npm start`
+## Lancer le projet
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Avant de lancer le projet vous aurez besoin d'installer npm pour gérer les bibliothèques de programmation Javascript pour Node.js.
+Pour cela mettez vous dans le dossier app-frontend.
+    - cd .\app-frontend\
+    - npm install
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Ensuite le projet est prêt à être lancé.
+    - npm start
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Notre outil de projet
+    
+https://trello.com/b/40hqxtRL/planning
