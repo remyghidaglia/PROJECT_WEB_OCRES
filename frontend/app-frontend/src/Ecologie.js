@@ -1,21 +1,5 @@
-/*import React from 'react';
 import './Ecologie.css'
-
-export default class NameForm extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <div class="container wrapper d-flex justify-content-center">
-                
-            </div>
-        );
-    }
-}*/
-
-import './Ecologie.css'
+import label from './img/prize.png';
 import React from "react"
 import { arc } from "d3-shape" //créer un arc 
 import { scaleLinear } from "d3-scale"
@@ -54,7 +38,7 @@ const Gauge = ({
         ()
     const colorScale = scaleLinear() //faire le dégradé de couleur
         .domain([0, 1])
-        .range(["#acf05e", "#FD3300"])
+        .range(["#3ee638", "#ff0000"])
     const gradientSteps = colorScale.ticks(10)
         .map(value => colorScale(value))
     const markerLocation = getCoordsOnArc(
@@ -64,7 +48,7 @@ const Gauge = ({
     return (
         <div>
             <svg id="curseur" style={{ overflow: "visible" }}
-                //width="15em" //grosseur du curseur
+                width="15em" //grosseur du curseur
                 viewBox={[
                     -1, -1,
                     2, 1,
@@ -113,7 +97,7 @@ const Gauge = ({
                     d="M0.136364 0.0290102C0.158279 -0.0096701 0.219156 -0.00967009 0.241071 0.0290102C0.297078 0.120023 0.375 0.263367 0.375 0.324801C0.375 0.422639 0.292208 0.5 0.1875 0.5C0.0852272 0.5 -1.8346e-08 0.422639 -9.79274e-09 0.324801C0.00243506 0.263367 0.0803571 0.120023 0.136364 0.0290102ZM0.1875 0.381684C0.221591 0.381684 0.248377 0.356655 0.248377 0.324801C0.248377 0.292947 0.221591 0.267918 0.1875 0.267918C0.153409 0.267918 0.126623 0.292947 0.126623 0.324801C0.126623 0.356655 0.155844 0.381684 0.1875 0.381684Z"
                     transform={`rotate(${angle * (180 / Math.PI)
                         }) translate(-0.2, -0.33)`}
-                    fill="#6a6a85"
+                    fill="#4f54fa"
                 />
             </svg><br></br><br></br>
             <div style={{
@@ -122,7 +106,7 @@ const Gauge = ({
                 lineHeight: "1em",
                 fontWeight: "900",
                 fontFeatureSettings: "'zero', 'tnum' 1",
-                color: "#6a6a85",
+                color: "#4f54fa",
                 textAlign: "center"
             }}>
                 {format(",")(value)}
@@ -140,50 +124,75 @@ export default class NameForm extends React.Component {
         return (
             <div>
                 <div class="row">
-                    <div class="col-12">
-                        <h3 id="ecolo">Page écologie</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12" style={{height: "130px"}}>
+                    <div class="col-12" style={{ height: "6em" }}>
                         <h3> </h3>
                     </div>
                 </div>
-                <div class="row align-items-center">
+
+                <div class="row align-items-center" id="blocFull">
                     <div class="col-6 wrapper d-flex justify-content-center">
-                        <h4><b>Le produit est composé de 3 emballages.</b>
-                        <br></br> 
-                        - Carton
-                        <br></br>
-                        - Plastique
-                        <br></br>
-                        - Barquette en plastique
-                        </h4>    
+                        <div class="container">
+                            <div class="row">
+                                <h4><b>Nombre de packaging</b></h4><br></br>
+                            </div>
+                            <div class="row">
+                                <h4>3</h4>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-6 wrapper d-flex justify-content-center">
-                        <Gauge></Gauge><br></br>  
+                        <Gauge></Gauge><br></br>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12" style={{height: "55px"}}>
-                        <h3> </h3>
+                <div class="row justify-content-between align-items-cente">
+                    <div class="col-5" id="blocHalf">
+                        <div class="container">
+                            <div class="row">
+                                <h4><b>Type de packaging</b></h4>
+                            </div>
+                            <div class="row">
+                                <h4><br></br>
+                                    - Carton
+                                    <br></br>
+                                    - Plastique
+                                    <br></br>
+                                    - Barquette en plastique
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5" id="blocHalf">
+                        <div class="container">
+                            <div class="row">
+                                <h4><b>L'origine du produit</b></h4><br></br>
+                                <br></br><h4>FRANCE</h4>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 wrapper d-flex justify-content-center">
-                    <h4><b>Le produit est BIO.</b></h4><br></br>
+
+                <div class="row align-items-center" id="blocFull">
+                    <div class="col-6 wrapper d-flex justify-content-center">
+                        <img src={label}></img><br></br>
+
+                    </div>
+                    <div class="col-6 wrapper d-flex justify-content-center">
+                        <div class="container">
+                            <div class="row">
+                                <h4>Les différents labels</h4>
+                            </div>
+                            <div class="row align-items-center">
+                                <h4><br></br>
+                                    - BIO
+                                    <br></br>
+                                    - Label Rouge
+                                </h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12" style={{height: "30px"}}>
-                        <h3> </h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 wrapper d-flex justify-content-center">
-                    <h4><b>Le produit vient de France.</b></h4>
-                    </div>
-                </div>
+                <div class="row" style={{ height: "6em" }}></div>
             </div>
         );
     }

@@ -41,7 +41,7 @@ const routes = [
   },
   {
     path: "/Ecologie",
-    title: () =><p>'x'</p>,
+    title: () =><p>'Vous trouverez ici les indications sur l'impact écologique de votre produit.'</p>,
     main: () => <Ecologie/>
   },
   {
