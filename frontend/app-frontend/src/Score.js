@@ -18,7 +18,7 @@ const data = [
   }
 ];
 
-export default class Score extends React.Component {
+class Score extends React.Component {
  
   render() {
     return (
@@ -33,3 +33,5 @@ export default class Score extends React.Component {
     );
   }
 }
+
+export default Score;

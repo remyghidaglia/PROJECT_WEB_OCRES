@@ -46,7 +46,7 @@ const WidgetsData = [
   }
 ];
 
-export default function SidebarExample() {
+function SidebarExample() {
   return (
     <Router>
       <div id="menu-bar">
@@ -73,6 +73,8 @@ export default function SidebarExample() {
     </Router>
   );
 }
+
+export default SidebarExample;
 
 const Widgets = ({data}) =>{
   return (

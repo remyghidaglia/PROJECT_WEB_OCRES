@@ -1,7 +1,7 @@
 import React from 'react';
 import './Admin.css'
 
-export default class NameForm extends React.Component {
+class NameForm extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -112,3 +112,5 @@ export default class NameForm extends React.Component {
         );
     }
 }
+
+export default NameForm;

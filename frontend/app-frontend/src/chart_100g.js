@@ -18,7 +18,7 @@ const data = [
   { name: "Sugars", gramme: 3.9 },
 ];
 
-export default class Barchart extends React.Component {
+class Barchart extends React.Component {
 render(){
 return (
   <ResponsiveContainer className="boxshadow">
@@ -32,3 +32,5 @@ return (
       </BarChart>
     </ResponsiveContainer>
 );}}
+
+export default Barchart;

@@ -119,7 +119,7 @@ const getCoordsOnArc = (angle, offset = 10) => [
     Math.sin(angle - (Math.PI / 2)) * offset,
 ]
 
-export default class NameForm extends React.Component {
+class Eco extends React.Component {
     render() {
         return (
             <div>
@@ -129,8 +129,8 @@ export default class NameForm extends React.Component {
                     </div>
                 </div>
 
-                <div class="row align-items-center" id="blocFull">
-                    <div class="col-6 wrapper d-flex justify-content-center">
+                <div class="row align-items-center" id="blocHalf">
+                    {/* <div class="col-6 wrapper d-flex justify-content-center">
                         <div class="container">
                             <div class="row">
                                 <h4><b>Nombre de packaging</b></h4><br></br>
@@ -139,12 +139,12 @@ export default class NameForm extends React.Component {
                                 <h4>3</h4>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                     <div class="col-6 wrapper d-flex justify-content-center">
-                        <Gauge></Gauge><br></br>
+                        <Gauge></Gauge><h4><b>Nombre de packagings pour votre produit</b></h4><br></br>
                     </div>
                 </div>
-                <div class="row justify-content-between align-items-cente">
+                {/*<div class="row justify-content-between align-items-cente">
                     <div class="col-5" id="blocHalf">
                         <div class="container">
                             <div class="row">
@@ -191,11 +191,11 @@ export default class NameForm extends React.Component {
                             </div>
                         </div>
                     </div>
-                </div>
+        </div>*/}
                 <div class="row" style={{ height: "6em" }}></div>
             </div>
         );
     }
 }
-
+export default Eco;
 //https://wattenberger.com/blog/gauge
