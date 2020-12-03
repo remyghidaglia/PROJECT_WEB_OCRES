@@ -47,7 +47,7 @@ export default class Ventes extends React.Component {
 
   render() {
     return (
-        <ResponsiveContainer>
+        <ResponsiveContainer className="boxshadow">
           <AreaChart
             data={data}
             margin={{
