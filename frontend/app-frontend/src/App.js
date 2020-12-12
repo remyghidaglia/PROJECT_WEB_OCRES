@@ -25,81 +25,116 @@ import {
 const WidgetsData = [
   {
     title: <p>Voici la proportion des composants de votre produit (/100g)</p>,
-    main: <BarChart/>
+    main: (data) => <BarChart data={data} />
 
   },
   {
     title: <p>Vous trouverez ici les indications sur l'impact écologique de votre produit.</p>,
-    main:  <Ecologie/>
+    main: (data) =>  <Ecologie data={data} />
   },
   {
     title: <p>Voici les différents tags en rapport avec votre produit</p>,
-    main:  <Tags/>
+    main: (data) =>  <Tags data={data} />
   },
   {
     title: <p>Voici le score nutritif de votre aliment</p>,
-    main:  <Score/>
+    main: (data) =>  <Score data={data} />
   },
   {
     title: <p>Voici un graphique présentant les potentiels allergènes présents dans votre produit.</p>,
-    main:  <Allergens/>
-    
+    main: (data) =>  <Allergens data={data} />
   },
   {
     title: <p>Voici un récapitulatif de vos entraînements physiques.</p>,
-    main:  <Exos/>
+    main: (data) => <Exos/>
   }
 ];
 
-function SidebarExample() {
-  return (
-    <Router>
-      <div id="menu-bar">
-        <div>
-              <div className="button"><Link to="/"><img src={img1} alt="img1"></img></Link></div>
-              <div className="button"><Link to="/New"><img src={img3} alt="img3"></img></Link></div>
-              <div className="button"><Link to="/Widgets"><img src={img2} alt="img2"></img></Link></div>
-        </div>
-      </div>
+class SidebarExample extends React.Component{
+  constructor(props) {
+    super(props);
+    this.onSubmit=this.onSubmit.bind(this)
+    this.state = {
+      error: null,
+      isLoaded: false,
+      product: []
+    };
+  }
+  
+  onSubmit(node){
+    fetch("https://world.openfoodfacts.org/api/v0/product/"+ node.value)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            product: result
+          });
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+  }
 
-        <div id="container">
-          <Switch>
-            <Route
-              path={"/"}
-              exact={true}
-              children={<Formulaire/>}
-            />
-            <Route
-              path={"/New"}
-              exact={true}
-              children={<New/>}
-            />
-            <Route
-              path={"/Exercices"}
-              exact={true}
-              children={<Liste/>}
-            />
-            <Route
-              path={"/Widgets"}
-              exact={true}
-              children={<Widgets data={WidgetsData}/>}
-            />
-            <Route path="/edit/:id" component={EditExercise} />
-          </Switch>
+
+  render() {
+
+    return (
+      <Router>
+        <div id="menu-bar">
+          <div>
+                <div className="button"><Link to="/"><img src={img1} alt="img1"></img></Link></div>
+                <div className="button"><Link to="/New"><img src={img3} alt="img3"></img></Link></div>
+                <div className="button"><Link to="/Widgets"><img src={img2} alt="img2"></img></Link></div>
+          </div>
         </div>
-    </Router>
-  );
+  
+          <div id="container">
+            <Switch>
+              <Route
+                path={"/"}
+                exact={true}
+                children={<Formulaire callback={this.onSubmit}/>}
+              />
+              <Route
+                path={"/New"}
+                exact={true}
+                children={<New/>}
+              />
+              <Route
+                path={"/Exercices"}
+                exact={true}
+                children={<Liste/>}
+              />
+              <Route
+                path={"/Widgets"}
+                exact={true}
+                children={<Widgets data={this.state.product} widgets={WidgetsData}/>}
+              />
+              <Route path="/edit/:id" component={EditExercise} />
+            </Switch>
+          </div>
+      </Router>
+    );
+  }
 }
 
 export default SidebarExample;
 
-const Widgets = ({data}) =>{
+const Widgets = ({data, widgets}) =>{
   return (
   <>
-    {data.map(w => (
+    {widgets.map(w => (
       <>
       {w.title} 
-      {w.main}
+      {w.main(data)}
       </>
     ))}
   </>)

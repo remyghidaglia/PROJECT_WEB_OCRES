@@ -19,10 +19,15 @@ const data = [
 ];
 
 class Barchart extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 render(){
 return (
+  <>
+  {JSON.stringify(this.props.data)}
   <ResponsiveContainer className="boxshadow">
-      <BarChart data={data} margin={{ top: 30, right: 30, left: 20, bottom: 30 }}>
+      <BarChart data={data} margin={{ top: 30, right: 30, left: 20, bottom: 30 }} style={{height: 400}}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" fill="white"/>
         <YAxis type="number" domain={[0, 100]}/>
@@ -31,6 +36,7 @@ return (
         <Bar dataKey="gramme" fill="#82ca9d" />
       </BarChart>
     </ResponsiveContainer>
+  </>
 );}}
 
 export default Barchart;

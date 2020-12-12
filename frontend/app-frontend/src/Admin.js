@@ -14,7 +14,7 @@ class NameForm extends React.Component {
         this.onChangeCalories = this.onChangeCalories.bind(this);
         this.onChangeDate = this.onChangeDate.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-
+        this.handleFormSubmit=props.callback
         this.state = {
             username: '',
             description: '',
@@ -94,14 +94,12 @@ class NameForm extends React.Component {
             <div class="wrapper d-flex justify-content-center">
 
                 <div class="container">
-                    <div class="row justify-content-center">
+                <div class="row justify-content-center">
                         <div id="fenetre" class="col-xl-8 col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <form id="code">
                                 <h4><b>Veuillez rentrer le code de votre produit</b></h4><br></br>
-                                <input type="text" placeholder="Code du produit" name="code" required></input>
+                                <input type="text" placeholder="Code du produit" name="code" id="barcode" required></input>
                                 <br></br>
-                                <input type="submit" id='codeB' value='Valider'></input><br></br>
-                            </form>
+                                <input type="submit" id='codeB' onClick={() => {this.handleFormSubmit(document.getElementById("barcode"))}} value='Valider'></input>
                         </div>
                     </div>
 
