@@ -61,7 +61,7 @@ h4 {
 
 @media screen and (max-width: 768px) {
     svg[id=curseur] {
-        width: 10em;
+        width: 9em;
     }
     h3 {
         font-size: 2em;

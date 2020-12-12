@@ -122,78 +122,64 @@ const getCoordsOnArc = (angle, offset = 10) => [
 class Eco extends React.Component {
     render() {
         return (
-            <div>
-                <div class="row">
-                    <div class="col-12" style={{ height: "6em" }}>
-                        <h3> </h3>
+            <div class="container">
+                {/* </div><div class="row align-items-center col-9" > */}
+                    <div class="col-12 wrapper d-flex justify-content-center" id="blocHalf">
+                        <div class="col-6 wrapper d-flex justify-content-center  align-self-center">
+                            <Gauge></Gauge>
+                        </div>
+                        <div class="col-6  align-self-center"><h4><b>Nombre de packagings pour votre produit</b></h4><br></br></div>
                     </div>
                 </div>
+                    
+            //     <div class="row justify-content-between align-items-cente">
+            //         <div class="col-5" id="blocHalf">
+            //             <div class="container">
+            //                 <div class="row">
+            //                     <h4><b>Type de packaging</b></h4>
+            //                 </div>
+            //                 <div class="row">
+            //                     <h4><br></br>
+            //                         - Carton
+            //                         <br></br>
+            //                         - Plastique
+            //                         <br></br>
+            //                         - Barquette en plastique
+            //                     </h4>
+            //                 </div>
+            //             </div>
+            //         </div>
+            //         <div class="col-5" id="blocHalf">
+            //             <div class="container">
+            //                 <div class="row">
+            //                     <h4><b>L'origine du produit</b></h4><br></br>
+            //                     <br></br><h4>FRANCE</h4>
+            //                 </div>
+            //             </div>
 
-                <div class="row align-items-center" id="blocHalf">
-                    {/* <div class="col-6 wrapper d-flex justify-content-center">
-                        <div class="container">
-                            <div class="row">
-                                <h4><b>Nombre de packaging</b></h4><br></br>
-                            </div>
-                            <div class="row">
-                                <h4>3</h4>
-                            </div>
-                        </div>
-                    </div> */}
-                    <div class="col-6 wrapper d-flex justify-content-center">
-                        <Gauge></Gauge><h4><b>Nombre de packagings pour votre produit</b></h4><br></br>
-                    </div>
-                </div>
-                {/*<div class="row justify-content-between align-items-cente">
-                    <div class="col-5" id="blocHalf">
-                        <div class="container">
-                            <div class="row">
-                                <h4><b>Type de packaging</b></h4>
-                            </div>
-                            <div class="row">
-                                <h4><br></br>
-                                    - Carton
-                                    <br></br>
-                                    - Plastique
-                                    <br></br>
-                                    - Barquette en plastique
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-5" id="blocHalf">
-                        <div class="container">
-                            <div class="row">
-                                <h4><b>L'origine du produit</b></h4><br></br>
-                                <br></br><h4>FRANCE</h4>
-                            </div>
-                        </div>
+            //         </div>
+            //     </div>
 
-                    </div>
-                </div>
+            //     <div class="row align-items-center" id="blocFull">
+            //         <div class="col-6 wrapper d-flex justify-content-center">
+            //             <img src={label}></img><br></br>
 
-                <div class="row align-items-center" id="blocFull">
-                    <div class="col-6 wrapper d-flex justify-content-center">
-                        <img src={label}></img><br></br>
-
-                    </div>
-                    <div class="col-6 wrapper d-flex justify-content-center">
-                        <div class="container">
-                            <div class="row">
-                                <h4>Les différents labels</h4>
-                            </div>
-                            <div class="row align-items-center">
-                                <h4><br></br>
-                                    - BIO
-                                    <br></br>
-                                    - Label Rouge
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-        </div>*/}
-                <div class="row" style={{ height: "6em" }}></div>
-            </div>
+            //         </div>
+            //         <div class="col-6 wrapper d-flex justify-content-center">
+            //             <div class="container">
+            //                 <div class="row">
+            //                     <h4>Les différents labels</h4>
+            //                 </div>
+            //                 <div class="row align-items-center">
+            //                     <h4><br></br>
+            //                         - BIO
+            //                         <br></br>
+            //                         - Label Rouge
+            //                     </h4>
+            //                 </div>
+            //             </div>
+            //         </div>
+            // </div>
         );
     }
 }

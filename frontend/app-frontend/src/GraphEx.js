@@ -44,7 +44,6 @@ const data = [
 ];
 
 export default class Ventes extends React.Component {
-
   render() {
     return (
         <ResponsiveContainer className="boxshadow">
@@ -60,7 +59,9 @@ export default class Ventes extends React.Component {
             <Tooltip />
             <Area type="monotone" dataKey="ventes" stroke="#8884d8" fill="#8884d8" />
           </AreaChart>
-        </ResponsiveContainer>
+          </ResponsiveContainer>
+
+          
     );
   }
 }

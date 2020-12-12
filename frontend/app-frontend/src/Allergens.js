@@ -33,7 +33,8 @@ const state = {
 class Allergies extends React.Component {
     render() {
         return (
-            <div className="boxshadow">
+            <div class="container wrapper d-flex justify-content-center">
+            <div className="boxshadow col-10">
                 <Doughnut
                     data={state}
                     options={{
@@ -50,6 +51,8 @@ class Allergies extends React.Component {
                         }
                     }}
                 />
+                <br></br>
+            </div>
             </div>
         );
     }
