@@ -7,7 +7,7 @@ import { format } from "d3-format"
 
 
 const Gauge = ({
-    value = 4,
+    value = value,
     min = 0,
     max = 4,
     //label,
@@ -97,7 +97,7 @@ const Gauge = ({
                     d="M0.136364 0.0290102C0.158279 -0.0096701 0.219156 -0.00967009 0.241071 0.0290102C0.297078 0.120023 0.375 0.263367 0.375 0.324801C0.375 0.422639 0.292208 0.5 0.1875 0.5C0.0852272 0.5 -1.8346e-08 0.422639 -9.79274e-09 0.324801C0.00243506 0.263367 0.0803571 0.120023 0.136364 0.0290102ZM0.1875 0.381684C0.221591 0.381684 0.248377 0.356655 0.248377 0.324801C0.248377 0.292947 0.221591 0.267918 0.1875 0.267918C0.153409 0.267918 0.126623 0.292947 0.126623 0.324801C0.126623 0.356655 0.155844 0.381684 0.1875 0.381684Z"
                     transform={`rotate(${angle * (180 / Math.PI)
                         }) translate(-0.2, -0.33)`}
-                    fill="#4f54fa"
+                    fill={colorScale(percent)}
                 />
             </svg><br></br><br></br>
             <div style={{
@@ -106,7 +106,7 @@ const Gauge = ({
                 lineHeight: "1em",
                 fontWeight: "900",
                 fontFeatureSettings: "'zero', 'tnum' 1",
-                color: "#4f54fa",
+                color: colorScale(percent),
                 textAlign: "center"
             }}>
                 {format(",")(value)}
@@ -120,15 +120,22 @@ const getCoordsOnArc = (angle, offset = 10) => [
 ]
 
 class Eco extends React.Component {
+    constructor(props) {
+        super(props);
+      }
+
     render() {
         return (
+            
             <div class="container">
+                {console.log(this.props.data.product.packaging_tags.length)}
+                {console.log(this.props.data.product.packaging_tags)}
                 {/* </div><div class="row align-items-center col-9" > */}
                     <div class="col-12 wrapper d-flex justify-content-center" id="blocHalf">
                         <div class="col-6 wrapper d-flex justify-content-center  align-self-center">
-                            <Gauge></Gauge>
+                            <Gauge value={this.props.data.product.packaging_tags.length}></Gauge>
                         </div>
-                        <div class="col-6  align-self-center"><h4><b>Nombre de packagings pour votre produit</b></h4><br></br></div>
+                        <div class="col-6  align-self-center"><p>Nombre de packagings pour votre produit</p></div>
                     </div>
                 </div>
                     
