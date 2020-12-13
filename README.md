@@ -7,8 +7,8 @@ Gr02A OCRES, ECE Paris
 
 ***
 
-Le projet a pour but de configurer un tableau de bord (dashboard) sur notre alimentation et notre consommation. Il sert d'outil autant pour un utilisateur lambda qu'une entreprise.
-Ce tableau de bord contient différents widgets permettant de visualiser les composants et les nutriments d'un produit, l'impact écologique de celui-ci, s'il est sain ou non, les potentiels allergènes et de suivre les statistiques et les ventes d'un produit.
+Le projet a pour but de configurer un tableau de bord (dashboard) sur notre alimentation et notre activité physique..
+Ce tableau de bord contient différents widgets permettant de visualiser les composants et les nutriments d'un produit, l'impact écologique de celui-ci, s'il est sain ou non, le nutriscore du produit et un tableau récapitulatif de l'activité physique de plusieurs utilisateurs.
 
 ## Lancer le projet
 
@@ -35,7 +35,7 @@ Ensuite le projet est prêt à être lancé.
 
 Le projet s'est bien passé, il y a eu une bonne entente et de l'entraide entre nous deux.
 Nous n'avons pas eu de quelconques difficultés mis à part la partie storybook qui nous était inconnu auparavant et qui s'est fait à la toute fin du projet.
-Nous avons aussi remarqué un petit problème de responsive sur la page principale que nous n'avons pas encore réussi à résoudre. 
+Nous avons aussi remarqué un petit problème de responsive sur la page principale que nous n'avons pas encore réussi à résoudre. Ainsi qu'un problème de connexion au serveur lorsuqe l'on veut ajouter un exercice physique ou le modifier.
 
 ## Notre outil de projet
     
