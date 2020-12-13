@@ -46,7 +46,7 @@ const WidgetsData = [
   },
   {
     title: <p>Voici un récapitulatif de vos entraînements physiques.</p>,
-    main: (data) => <Exos/>
+    main: () => <Exos/>
   }
 ];
 

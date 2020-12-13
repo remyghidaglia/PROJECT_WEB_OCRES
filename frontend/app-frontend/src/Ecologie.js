@@ -7,7 +7,7 @@ import { format } from "d3-format"
 
 
 const Gauge = ({
-    value = 3,
+    value = 4,
     min = 0,
     max = 4,
     //label,
