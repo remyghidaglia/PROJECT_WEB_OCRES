@@ -27,7 +27,7 @@ return (
   <>
   <div style={{textAlign:"center",marginBottom:"20px"}}><img src={this.props.data.product.image_url}></img></div>
   {console.log(Object.keys(this.props.data.product.nutriments).filter((key) => key.includes("_100g")).map(key => ({ name: key, gramme: (this.props.data.product.nutriments)[key]})))}
-
+  {console.log(this.props.data.product.nutriments)}
   <ResponsiveContainer className="boxshadow">
       <BarChart data={Object.keys(this.props.data.product.nutriments).filter((key) => key.includes("_100g") && !key.includes("energy") && !key.includes("saturated")&& !key.includes("carbon")&& !key.includes("nova")&& !key.includes("prepared")&& !key.includes("score")&& !key.includes("fruits-vegetables-nuts-estimate") && !key.includes("nutrition-score-fr")&& !(this.props.data.product.nutriments[key])==0).map(key => ({ name: key, gramme: (this.props.data.product.nutriments)[key]}))} margin={{ top: 30, right: 30, left: 20, bottom: 30 }} style={{height: 400}}>
         <CartesianGrid strokeDasharray="3 3" />

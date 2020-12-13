@@ -4,18 +4,7 @@ import {
 } from 'recharts';
 import './App.css';
 const data = [
-  { name: 'boisson', value: 100 },
-  { name: 'derive', value: 100 },
-  { name: 'origine', value: 100 },
-  { name: 'vapeur', value: 100 },
-  { name: 'aliment', value: 100 },
-  { name: 'pomme', value: 100 },
-  { name: 'moyen', value: 100 },
-  { name: 'cereale', value: 100 },
-  { name: 'couscou', value: 100 },
-  { name: 'terre', value: 100 },
-  { name: 'roulee', value: 100 },
-  { name: 'base', value: 100 }
+  {value : 100}
 
 ];
 
@@ -29,23 +18,27 @@ let renderLabel = function (entry) {
 }
 
 class Tags extends React.Component {
-
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
+      <>
+      {console.log((this.props.data.product._keywords))}
       <ResponsiveContainer className="boxshadow">
         <PieChart >
           <Pie
-            data={data}
-            fill="white"
+            data={(this.props.data.product._keywords).filter((key) => !key.includes("la") && !key.includes("et") &&!key.includes("de") && !key.includes("le") && !key.includes("aux") && !key.includes("au") ).map(key=> ({name:key, value:100}))}
             dataKey="value"
             label={renderLabel}
           >
             {
-              data.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
+              this.props.data.product._keywords.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)
             }
           </Pie>
         </PieChart>
       </ResponsiveContainer>
+      </>
     );
   }
 }
