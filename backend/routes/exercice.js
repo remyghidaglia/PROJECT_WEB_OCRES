@@ -23,7 +23,7 @@ router.route('/add').post((req, res) => {
     });
 
     newExercice.save()
-        .then(() => res.json('Exercice added !'))
+        .then(() => res.json('Exercice ajouté !'))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
@@ -35,7 +35,7 @@ router.route('/:id').get((req, res) => {
 
 router.route('/:id').delete((req, res) => {
     Exercice.findByIdAndDelete(req.params.id)
-        .then(() => res.json('Exercice deleted.'))
+        .then(() => res.json('Exercice supprimé.'))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
@@ -49,7 +49,7 @@ router.route('/update/:id').post((req, res) => {
             exercices.date = Date.parse(req.body.date);
 
             exercices.save()
-                .then(() => res.json('Exercice updated !'))
+                .then(() => res.json('Exercice mis à jour !'))
                 .catch(err => res.status(400).json('Error: ' + err));
 
         })

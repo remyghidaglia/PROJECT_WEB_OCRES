@@ -1,23 +1,42 @@
-# Projet de fin de semestre
+# My Healthy Dashboard
 
-A lire impérativement avant de commencer quoi que ce soit, ce sont les règles que vous devrez appliquer tout au long du semestre:
+Réalisé par:
+Rémy GHIDAGLIA et Marine MICHENAUD
+Gr02A OCRES, ECE Paris
+2020
 
-<p align="center">
- <a href="https://gitlab.com/Adrien_Kourganoff/instructions_web_ocres_ing4/-/blob/master/README.md">Règles pour le semestre</a>
-</p>
+***
 
-## Introduction
+Le projet a pour but de configurer un tableau de bord (dashboard) sur notre alimentation et notre consommation. Il sert d'outil autant pour un utilisateur lambda qu'une entreprise.
+Ce tableau de bord contient différents widgets permettant de visualiser les composants et les nutriments d'un produit, l'impact écologique de celui-ci, s'il est sain ou non, les potentiels allergènes et de suivre les statistiques et les ventes d'un produit.
 
-Ce repo git contient deux repertoires. L'un concerne la partie backend et l'autre la partie frontend.
+## Lancer le projet
 
-Les deux repertoires ont été initialisé pour vous aider à démarrer le projet dans les meilleures conditions.
+Avant de lancer le projet vous aurez besoin d'installer npm pour gérer les bibliothèques de programmation Javascript pour Node.js.
+Pour cela, ouvrez 2 terminaux en simultané.
+Mettez vous dans le dossier backend :
+    - cd .\backend\
+Puis lancez toutes ces commandes pour faire toutes les configurations nécessaires :
+    - npm install express cors mongoose dotenv
+    - npm install -g nodemon
+    - Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Ensuite la connexion au serveur est prête à être lancée.   
+    - nodemon server
 
-Chacun de ces repertoires contient un README.md qui vous pouvez vous approprier. Nous vous encourageons à le faire en y mettant toute les informations nécessaires à la compréhension de votre projet
+Mettez vous dans le dossier app-frontend.
+    - cd .\app-frontend\
+    - npm install
+    - npm install axios
 
-## Instructions
+Ensuite le projet est prêt à être lancé.
+    - npm start
 
-Les instructions sont à retrouver dans le pdf instruction.pdf.
+## Difficultés
 
-**Le non respect de ces instructions entraînera des pertes de points alors prenez le temps de tout lire et de poser des questions si vous ne comprenez pas**
+Le projet s'est bien passé, il y a eu une bonne entente et de l'entraide entre nous deux.
+Nous n'avons pas eu de quelconques difficultés mis à part la partie storybook qui nous était inconnu auparavant et qui s'est fait à la toute fin du projet.
+Nous avons aussi remarqué un petit problème de responsive sur la page principale que nous n'avons pas encore réussi à résoudre. 
 
-Pour rappel, la probabilité de recevoir une réponse à un mail envoyé quelques heures avant le rendu est très proche de 0.
+## Notre outil de projet
+    
+https://trello.com/b/40hqxtRL/planning
