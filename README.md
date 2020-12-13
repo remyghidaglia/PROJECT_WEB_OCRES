@@ -14,12 +14,15 @@ Ce tableau de bord contient différents widgets permettant de visualiser les com
 
 Avant de lancer le projet vous aurez besoin d'installer npm pour gérer les bibliothèques de programmation Javascript pour Node.js.
 Pour cela, ouvrez 2 terminaux en simultané.
+
 Mettez vous dans le dossier backend :
     - cd .\backend\
+
 Puis lancez toutes ces commandes pour faire toutes les configurations nécessaires :
     - npm install express cors mongoose dotenv
     - npm install -g nodemon
     - Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
 Ensuite la connexion au serveur est prête à être lancée.   
     - nodemon server
 
@@ -35,7 +38,7 @@ Ensuite le projet est prêt à être lancé.
 
 Le projet s'est bien passé, il y a eu une bonne entente et de l'entraide entre nous deux.
 Nous n'avons pas eu de quelconques difficultés mis à part la partie storybook qui nous était inconnu auparavant et qui s'est fait à la toute fin du projet.
-Nous avons aussi remarqué un petit problème de responsive sur la page principale que nous n'avons pas encore réussi à résoudre. Ainsi qu'un problème de connexion au serveur lorsuqe l'on veut ajouter un exercice physique ou le modifier.
+Nous avons aussi remarqué un petit problème de responsive sur la page principale que nous n'avons pas encore réussi à résoudre. Ainsi qu'un problème de connexion au serveur lorsque l'on veut ajouter un exercice physique ou le modifier.
 
 ## Notre outil de projet
     
