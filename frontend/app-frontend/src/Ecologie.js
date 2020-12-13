@@ -128,8 +128,6 @@ class Eco extends React.Component {
         return (
             
             <div class="container">
-                {console.log(this.props.data.product.packaging_tags.length)}
-                {console.log(this.props.data.product.packaging_tags)}
                 {/* </div><div class="row align-items-center col-9" > */}
                     <div class="col-12 wrapper d-flex justify-content-center" id="blocHalf">
                         <div class="col-6 wrapper d-flex justify-content-center  align-self-center">

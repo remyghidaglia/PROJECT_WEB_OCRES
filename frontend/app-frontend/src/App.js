@@ -7,12 +7,11 @@ import New from './User';
 import Liste from './ListeExercices';
 import BarChart from './chart_100g.js';
 import Ecologie from './Ecologie';
-import Allergens from './Allergens';
+import Nutriscore from './Nutriscore';
 import Score from './Score.js';
 import Tags from './Tags';
 import Exos from './ListeExercices';
 import './App.css';
-import { useState } from 'react';
 import EditExercise from "./EditEx";
 import {
   BrowserRouter as Router,
@@ -41,8 +40,8 @@ const WidgetsData = [
     main: (data) =>  <Score data={data} />
   },
   {
-    title: <p>Voici un graphique présentant les potentiels allergènes présents dans votre produit.</p>,
-    main: (data) =>  <Allergens data={data} />
+    title: <p>Quel est le Nutriscore de votre produit ?</p>,
+    main: (data) =>  <Nutriscore data={data} />
   },
   {
     title: <p>Voici un récapitulatif de vos entraînements physiques.</p>,
