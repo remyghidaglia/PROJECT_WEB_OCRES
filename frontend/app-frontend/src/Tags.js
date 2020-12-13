@@ -28,7 +28,7 @@ class Tags extends React.Component {
       <ResponsiveContainer className="boxshadow">
         <PieChart >
           <Pie
-            data={(this.props.data.product._keywords).filter((key) => !key.includes("la") && !key.includes("et") &&!key.includes("de") && !key.includes("le") && !key.includes("aux") && !key.includes("au") ).map(key=> ({name:key, value:100}))}
+            data={(this.props.data.product._keywords).filter((key) => !key.includes("la") && !key.includes("et") && !key.includes("en") && !key.includes("avec") && !key.includes("san") &&!key.includes("de") && !key.includes("le") && !key.includes("aux") && !key.includes("au") ).map(key=> ({name:key, value:100}))}
             dataKey="value"
             label={renderLabel}
           >

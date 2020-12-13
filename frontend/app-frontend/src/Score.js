@@ -19,17 +19,21 @@ const data = [
 ];
 
 class Score extends React.Component {
- 
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
+      <>
+      {console.log(Object.keys(this.props.data.product.nutrient_levels).map(key => (this.props.data.product.nutrient_levels)[key] == "high" ? { name:key, value: 100 } : { name:key, value : 10}))}
       <ResponsiveContainer className="boxshadow">
-      <RadarChart  data={data}>
+      <RadarChart  data={Object.keys(this.props.data.product.nutrient_levels).map(key => (this.props.data.product.nutrient_levels)[key] == "high" ? { name:key, value: 100 } : { name:key, value : 10})}>
         <PolarGrid />
-        <PolarAngleAxis dataKey="subject" color="white"/>
-        <PolarRadiusAxis />
-        <Radar name="Nutella" dataKey="A" stroke="white" fill="#8884d8" fillOpacity={0.7} />
+        <PolarAngleAxis dataKey="name" fill="white"/>
+        <Radar  dataKey="value" stroke="white" fill="#9FFFF5" fillOpacity={0.7} />
       </RadarChart>
       </ResponsiveContainer>
+      </>
     );
   }
 }
