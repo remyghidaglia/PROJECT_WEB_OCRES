@@ -34,6 +34,19 @@ Mettez vous dans le dossier app-frontend.
 Ensuite le projet est prêt à être lancé.
     - npm start
 
+### Accéder au dashboard
+Pour accéder à l'interface du dashboard il faut impérativement rentrer le code barre d'un produit puis le valider.
+Notez que le widget concernant le nutriscore peut être vide en fonction du produit (si celui-ci n'est pas renseigné dans le .JSON).
+
+### Ajouter un utilisateur
+Vous pouvez ajouter un utilisateur pour votre tableau des activités physiques.
+Vous ne pouvez pas ajouter d'activité avec un utilisateur non inscrit.
+
+### Ajouter une activité physique
+Dans le formulaire de la page admin, vous pouvez ajouter un exercice sportif.
+Celui-ci s'ajoutera ensuite dans le tableau du dernier widget.
+Vous pourrez par ailleurs modifier ou supprimer les activités que vous voulez.
+
 ## Difficultés
 
 Le projet s'est bien passé, il y a eu une bonne entente et de l'entraide entre nous deux.

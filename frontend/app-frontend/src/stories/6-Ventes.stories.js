@@ -1,9 +1,9 @@
 import React from 'react';
-import Ventes from '../Ventes';
+import Exos from '../ListeExercices';
 
 export default {
     title:'My Healthy Dashboard/Widget 6',
-    component: Ventes,
+    component: Exos,
 }
 
-export const ventes = () => (<Ventes/>);
+export const ventes = () => (<Exos/>);

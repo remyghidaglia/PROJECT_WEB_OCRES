@@ -1,9 +1,9 @@
 import React from 'react';
-import Allergies from '../Allergens';
+import Nutri from '../Nutriscore';
 
 export default {
     title:'My Healthy Dashboard/Widget 5',
-    component: Allergies,
+    component: Nutri,
 }
 
-export const allergie = () => (<Allergies/>);
+export const allergie = () => (<Nutri/>);
